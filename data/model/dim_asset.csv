@@ -1,0 +1,37 @@
+asset_key,repo,tag,asset,product,kind,platform
+1,potlakai/nus,desktop-v0.1.0,Nus-Portable.exe,legacy,installer,Windows
+2,potlakai/nus,desktop-v0.1.0,Nus-Setup.exe,legacy,installer,Windows
+3,potlakai/nus,v1.0.0,nus-v1.0.0.zip,legacy,installer,source zip
+4,potlakai/nus-desktop,companion-v0.1.0,Nus-Companion-Portable.exe,companion,installer,Windows
+5,potlakai/nus-desktop,companion-v0.1.0,Nus-Companion-Setup.exe,companion,installer,Windows
+6,potlakai/nus-desktop,companion-v0.1.1,Nus-Companion-Portable.exe,companion,installer,Windows
+7,potlakai/nus-desktop,companion-v0.1.1,Nus-Companion-Setup.exe,companion,installer,Windows
+8,potlakai/nus-desktop,companion-v0.1.2,Nus-Companion-Portable.exe,companion,installer,Windows
+9,potlakai/nus-desktop,companion-v0.1.2,Nus-Companion-Setup.exe,companion,installer,Windows
+10,potlakai/nus-desktop,companion-v0.1.3,Nus-Companion-Portable.exe,companion,installer,Windows
+11,potlakai/nus-desktop,companion-v0.1.3,Nus-Companion-Setup.exe,companion,installer,Windows
+12,potlakai/nus-desktop,v0.1.0,Nus-Portable.exe,full,installer,Windows
+13,potlakai/nus-desktop,v0.1.0,Nus-Setup.exe,full,installer,Windows
+14,potlakai/nus-desktop,v0.2.1,Nus-Portable.exe,full,installer,Windows
+15,potlakai/nus-desktop,v0.2.1,Nus-Setup.exe,full,installer,Windows
+16,potlakai/nus-desktop,v0.2.1,latest.yml,full,update_check,update feed
+17,potlakai/nus-desktop,v0.2.2,Nus-Portable.exe,full,installer,Windows
+18,potlakai/nus-desktop,v0.2.2,Nus-Setup.exe,full,installer,Windows
+19,potlakai/nus-desktop,v0.2.2,latest.yml,full,update_check,update feed
+20,potlakai/nus-desktop,v0.2.3,Nus-Portable.exe,full,installer,Windows
+21,potlakai/nus-desktop,v0.2.3,Nus-Setup.exe,full,installer,Windows
+22,potlakai/nus-desktop,v0.2.3,latest.yml,full,update_check,update feed
+23,potlakai/nus-desktop,v0.2.4,Nus-Portable.exe,full,installer,Windows
+24,potlakai/nus-desktop,v0.2.4,Nus-Setup.exe,full,installer,Windows
+25,potlakai/nus-desktop,v0.2.4,latest.yml,full,update_check,update feed
+26,potlakai/nus-desktop,v0.2.5,Nus-Portable.exe,full,installer,Windows
+27,potlakai/nus-desktop,v0.2.5,Nus-Setup.exe,full,installer,Windows
+28,potlakai/nus-desktop,v0.2.5,latest.yml,full,update_check,update feed
+29,potlakai/nus-desktop,v0.2.6,Nus-Portable.exe,full,installer,Windows
+30,potlakai/nus-desktop,v0.2.6,Nus-Setup.exe,full,installer,Windows
+31,potlakai/nus-desktop,v0.2.6,Nus-arm64.dmg,full,installer,macOS
+32,potlakai/nus-desktop,v0.2.6,Nus-x64.dmg,full,installer,macOS
+33,potlakai/nus-desktop,v0.2.6,latest.yml,full,update_check,update feed
+34,potlakai/nus-desktop,v0.2.7,Nus-Portable.exe,full,installer,Windows
+35,potlakai/nus-desktop,v0.2.7,Nus-Setup.exe,full,installer,Windows
+36,potlakai/nus-desktop,v0.2.7,latest.yml,full,update_check,update feed
