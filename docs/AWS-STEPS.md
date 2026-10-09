@@ -1,4 +1,6 @@
-# Your part: S3, Athena, QuickSight (about 2-3 hours)
+# S3, Athena, QuickSight
+
+**Status 2026-10-08:** S3 and Athena are done (`aws/deploy.py`, bucket `nus-growth-pranav`, region us-east-2, database `nus_growth`; answers in `docs/athena-results.md`). QuickSight is denied by a service control policy on this account type, so the dashboard is built in a desktop BI tool from `data/model/*.csv` instead.
 
 Do these yourself in your own AWS account. That's what makes "S3 / Athena / QuickSight" true on the resume, and it's what you'll describe in the interview. Never paste keys into chat or into this repo.
 

@@ -4,7 +4,7 @@ A BI model of the real download and funnel data of [Nūs](https://github.com/pot
 
 - **Raw data:** GitHub release-download snapshots taken every 4 hours, site analytics, and product funnel events.
 - **Pipeline:** sanitized CSVs → a star schema → SQL analysis → statistics → dashboard.
-- **Portable SQL:** the same SQL runs locally in DuckDB and on Amazon Athena over S3 (`sql/athena/`).
+- **Portable SQL:** the same SQL runs locally in DuckDB and on Amazon Athena over S3 (`sql/athena/`, deployed by `aws/deploy.py`); `docs/athena-results.md` holds Athena's answers for the side-by-side check.
 
 ## Business questions
 
@@ -36,13 +36,15 @@ dim_asset ---- fact_downloads_daily ---- dim_release
 
 | Question | Answer |
 |---|---|
-| Where downloads come from | 170 new installer downloads in the 14-day window: the full app on Windows 49%, Companion on Windows 45%, macOS 6%. Of 408 lifetime downloads, v0.2.6 (213) and Companion v0.1.0 (115) account for 80%. |
-| Release decay | Average daily downloads per release file: 1.77 in a release's first week, 0.99 in weeks 2-3, 0.01 after. OLS of daily downloads on log(1 + days since release), controlling for product, with robust errors: coefficient **-1.28, p < 0.001** (n = 326). Distribution is release-driven, so release cadence is a growth lever. |
+| Where downloads come from | 172 new installer downloads in the 14-day window: the full app on Windows 48%, Companion on Windows 44%, macOS 8%. Of 408 lifetime downloads, v0.2.6 (213) and Companion v0.1.0 (115) account for 80%. |
+| Release decay | Average daily downloads per release file: 1.77 in a release's first week, 1.08 in weeks 2-3, 0.01 after. OLS of daily downloads on log(1 + days since release), controlling for product, with robust errors: coefficient **-1.17, p = 0.004** (n = 311). Distribution is release-driven, so release cadence is a growth lever. |
 | Site funnel | landing view 34 → download click 9 (26%) → install 8 → app open 8 → first ask 6 → sign-in 3. The biggest drop is landing to download click. |
 | Paid vs organic (X campaign) | Profile-visit rate: organic 1.61% vs paid 0.29%, 5.5x. Chi-square = 37.3, p < 0.001. |
-| Weekday vs weekend | No difference (Welch t-test p = 0.86). |
+| Weekday vs weekend | No detectable difference (Welch t-test p = 0.49; only 3 weekend days). |
 
 ## Data quality notes
+
+- **A timezone bug, caught by running the same SQL on two engines.** DuckDB auto-parsed the ISO timestamps as timezone-aware and printed them in local time, which moved early-morning UTC snapshots to the previous day; Athena kept them as written. The daily series disagreed until the loader was changed to read timestamps as text. The two engines now match on every query.
 
 - **Site visits read 0 before 2026-10-06, when analytics tracking went live.** Those zeros are missing data, not zero traffic. Only 3 tracked days overlap the download data, so the traffic-to-downloads regression waits for 30+ tracked days.
 - **The paid vs organic numbers come from X's analytics panel, which is internally inconsistent** (organic expands > total on one post). Treat that test as directional.

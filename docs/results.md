@@ -2,11 +2,11 @@
 
 ## Star schema row counts
 
-- `dim_date`: 34
+- `dim_date`: 35
 - `dim_release`: 14
 - `dim_asset`: 36
 - `dim_page`: 11
-- `fact_downloads_daily`: 448
+- `fact_downloads_daily`: 428
 - `fact_site_daily`: 359
 - `fact_funnel_daily`: 76
 
@@ -14,47 +14,45 @@
 
 | full_date           |   installer_downloads |
 |:--------------------|----------------------:|
-| 2026-09-25 00:00:00 |                    66 |
-| 2026-09-26 00:00:00 |                    24 |
-| 2026-09-27 00:00:00 |                    15 |
-| 2026-09-28 00:00:00 |                    10 |
-| 2026-09-29 00:00:00 |                     6 |
-| 2026-09-30 00:00:00 |                    20 |
-| 2026-10-01 00:00:00 |                     0 |
+| 2026-09-26 00:00:00 |                    87 |
+| 2026-09-27 00:00:00 |                     5 |
+| 2026-09-28 00:00:00 |                    22 |
+| 2026-09-29 00:00:00 |                     8 |
+| 2026-09-30 00:00:00 |                    17 |
+| 2026-10-01 00:00:00 |                     4 |
 | 2026-10-02 00:00:00 |                     2 |
-| 2026-10-03 00:00:00 |                     0 |
 | 2026-10-04 00:00:00 |                     2 |
 | 2026-10-05 00:00:00 |                    12 |
 | 2026-10-06 00:00:00 |                     5 |
 | 2026-10-07 00:00:00 |                     3 |
 | 2026-10-08 00:00:00 |                     5 |
+| 2026-10-09 00:00:00 |                     0 |
 
 ## q2_rolling_7day
 
 | full_date           |   downloads |   rolling_7d_avg |
 |:--------------------|------------:|-----------------:|
-| 2026-09-25 00:00:00 |          66 |            66    |
-| 2026-09-26 00:00:00 |          24 |            45    |
-| 2026-09-27 00:00:00 |          15 |            35    |
-| 2026-09-28 00:00:00 |          10 |            28.75 |
-| 2026-09-29 00:00:00 |           6 |            24.2  |
-| 2026-09-30 00:00:00 |          20 |            23.5  |
-| 2026-10-01 00:00:00 |           0 |            20.14 |
-| 2026-10-02 00:00:00 |           2 |            11    |
-| 2026-10-03 00:00:00 |           0 |             7.57 |
-| 2026-10-04 00:00:00 |           2 |             5.71 |
-| 2026-10-05 00:00:00 |          12 |             6    |
-| 2026-10-06 00:00:00 |           5 |             5.86 |
-| 2026-10-07 00:00:00 |           3 |             3.43 |
-| 2026-10-08 00:00:00 |           5 |             4.14 |
+| 2026-09-26 00:00:00 |          87 |            87    |
+| 2026-09-27 00:00:00 |           5 |            46    |
+| 2026-09-28 00:00:00 |          22 |            38    |
+| 2026-09-29 00:00:00 |           8 |            30.5  |
+| 2026-09-30 00:00:00 |          17 |            27.8  |
+| 2026-10-01 00:00:00 |           4 |            23.83 |
+| 2026-10-02 00:00:00 |           2 |            20.71 |
+| 2026-10-04 00:00:00 |           2 |             8.57 |
+| 2026-10-05 00:00:00 |          12 |             9.57 |
+| 2026-10-06 00:00:00 |           5 |             7.14 |
+| 2026-10-07 00:00:00 |           3 |             6.43 |
+| 2026-10-08 00:00:00 |           5 |             4.71 |
+| 2026-10-09 00:00:00 |           0 |             4.14 |
 
 ## q3_downloads_by_product_platform
 
 | product   | platform   |   downloads |   pct_of_total |
 |:----------|:-----------|------------:|---------------:|
-| full      | Windows    |          83 |           48.8 |
-| companion | Windows    |          76 |           44.7 |
-| full      | macOS      |          11 |            6.5 |
+| full      | Windows    |          83 |           48.3 |
+| companion | Windows    |          76 |           44.2 |
+| full      | macOS      |          13 |            7.6 |
 | legacy    | Windows    |           0 |            0   |
 | legacy    | source zip |           0 |            0   |
 
@@ -62,47 +60,46 @@
 
 | repo                 | tag              | published_date      |   lifetime_downloads |
 |:---------------------|:-----------------|:--------------------|---------------------:|
-| potlakai/nus         | v1.0.0           | 2026-07-07 00:00:00 |                    8 |
-| potlakai/nus-desktop | v0.1.0           | 2026-08-19 00:00:00 |                    3 |
+| potlakai/nus         | v1.0.0           | 2026-07-08 00:00:00 |                    8 |
 | potlakai/nus         | desktop-v0.1.0   | 2026-08-19 00:00:00 |                    7 |
+| potlakai/nus-desktop | v0.1.0           | 2026-08-19 00:00:00 |                    3 |
 | potlakai/nus-desktop | v0.2.1           | 2026-08-22 00:00:00 |                    3 |
-| potlakai/nus-desktop | v0.2.3           | 2026-08-22 00:00:00 |                    3 |
-| potlakai/nus-desktop | v0.2.2           | 2026-08-22 00:00:00 |                    0 |
-| potlakai/nus-desktop | v0.2.4           | 2026-09-06 00:00:00 |                    5 |
-| potlakai/nus-desktop | v0.2.5           | 2026-09-12 00:00:00 |                    4 |
+| potlakai/nus-desktop | v0.2.2           | 2026-08-23 00:00:00 |                    0 |
+| potlakai/nus-desktop | v0.2.3           | 2026-08-23 00:00:00 |                    3 |
+| potlakai/nus-desktop | v0.2.4           | 2026-09-07 00:00:00 |                    5 |
+| potlakai/nus-desktop | v0.2.5           | 2026-09-13 00:00:00 |                    4 |
 | potlakai/nus-desktop | v0.2.6           | 2026-09-16 00:00:00 |                  213 |
 | potlakai/nus-desktop | companion-v0.1.0 | 2026-09-22 00:00:00 |                  115 |
 | potlakai/nus-desktop | companion-v0.1.1 | 2026-09-28 00:00:00 |                   12 |
 | potlakai/nus-desktop | companion-v0.1.2 | 2026-10-02 00:00:00 |                   13 |
-| potlakai/nus-desktop | companion-v0.1.3 | 2026-10-06 00:00:00 |                   15 |
 | potlakai/nus-desktop | v0.2.7           | 2026-10-06 00:00:00 |                    7 |
+| potlakai/nus-desktop | companion-v0.1.3 | 2026-10-06 00:00:00 |                   15 |
 
 ## q5_release_age_decay
 
 | release_age   |   avg_daily_downloads_per_asset |   asset_days |
 |:--------------|--------------------------------:|-------------:|
 | 0-7 days      |                            1.77 |           44 |
-| 8-21 days     |                            0.99 |           92 |
-| 22+ days      |                            0.01 |          190 |
+| 8-21 days     |                            1.08 |           86 |
+| 22+ days      |                            0.01 |          181 |
 
 ## q6_traffic_vs_downloads
 
 | full_date           | is_weekend   |   visits |   downloads |
 |:--------------------|:-------------|---------:|------------:|
-| 2026-09-25 00:00:00 | False        |        0 |          66 |
-| 2026-09-26 00:00:00 | True         |        0 |          24 |
-| 2026-09-27 00:00:00 | True         |        0 |          15 |
-| 2026-09-28 00:00:00 | False        |        0 |          10 |
-| 2026-09-29 00:00:00 | False        |        0 |           6 |
-| 2026-09-30 00:00:00 | False        |        0 |          20 |
-| 2026-10-01 00:00:00 | False        |        0 |           0 |
+| 2026-09-26 00:00:00 | True         |        0 |          87 |
+| 2026-09-27 00:00:00 | True         |        0 |           5 |
+| 2026-09-28 00:00:00 | False        |        0 |          22 |
+| 2026-09-29 00:00:00 | False        |        0 |           8 |
+| 2026-09-30 00:00:00 | False        |        0 |          17 |
+| 2026-10-01 00:00:00 | False        |        0 |           4 |
 | 2026-10-02 00:00:00 | False        |        0 |           2 |
-| 2026-10-03 00:00:00 | True         |        0 |           0 |
 | 2026-10-04 00:00:00 | True         |        0 |           2 |
 | 2026-10-05 00:00:00 | False        |        0 |          12 |
 | 2026-10-06 00:00:00 | False        |       76 |           5 |
 | 2026-10-07 00:00:00 | False        |       20 |           3 |
 | 2026-10-08 00:00:00 | False        |        9 |           5 |
+| 2026-10-09 00:00:00 | False        |        0 |           0 |
 
 ## q7_site_funnel
 
@@ -121,48 +118,48 @@
 |:-----------------------------------|---------:|
 | download-windows-companion-ways    |        9 |
 | download-windows-ways              |        4 |
-| download-windows-companion-pricing |        1 |
 | download-mac-footer                |        1 |
 | download-windows-pricing           |        1 |
 | download-windows-start             |        1 |
+| download-windows-companion-pricing |        1 |
 
 ## Data quality: site visits
 
-Site visits read 0 on every day before 2026-10-06: analytics tracking went live then, so earlier zeros are missing data, not zero traffic. Only 3 days overlap with download data, too few for a traffic-to-downloads regression; it is re-run once 30+ tracked days exist (`regression()` is kept for that).
+Site visits read 0 on every day before 2026-10-06: analytics tracking went live then, so earlier zeros are missing data, not zero traffic. Only 4 days overlap with download data, too few for a traffic-to-downloads regression; it is re-run once 30+ tracked days exist (`regression()` is kept for that).
 
 ## Regression: release decay (release-asset-day grain, robust HC1 errors)
 
 ```
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:              downloads   R-squared:                       0.093
-Model:                            OLS   Adj. R-squared:                  0.084
-Method:                 Least Squares   F-statistic:                     4.531
-Date:                Thu, 08 Oct 2026   Prob (F-statistic):            0.00397
-Time:                        20:21:30   Log-Likelihood:                -747.82
-No. Observations:                 326   AIC:                             1504.
-Df Residuals:                     322   BIC:                             1519.
+Dep. Variable:              downloads   R-squared:                       0.056
+Model:                            OLS   Adj. R-squared:                  0.047
+Method:                 Least Squares   F-statistic:                     3.291
+Date:                Thu, 08 Oct 2026   Prob (F-statistic):             0.0210
+Time:                        22:15:21   Log-Likelihood:                -784.88
+No. Observations:                 311   AIC:                             1578.
+Df Residuals:                     307   BIC:                             1593.
 Df Model:                           3                                         
 Covariance Type:                  HC1                                         
 ========================================================================================
                            coef    std err          z      P>|z|      [0.025      0.975]
 ----------------------------------------------------------------------------------------
-Intercept                3.5615      1.030      3.459      0.001       1.543       5.580
-C(product)[T.full]       1.1201      0.680      1.646      0.100      -0.213       2.454
-C(product)[T.legacy]     1.5655      0.755      2.073      0.038       0.085       3.045
-log_age                 -1.2761      0.379     -3.371      0.001      -2.018      -0.534
+Intercept                3.4554      1.152      3.000      0.003       1.198       5.713
+C(product)[T.full]       0.8952      0.812      1.102      0.271      -0.697       2.488
+C(product)[T.legacy]     1.2626      0.863      1.463      0.143      -0.428       2.954
+log_age                 -1.1702      0.406     -2.884      0.004      -1.966      -0.375
 ==============================================================================
-Omnibus:                      475.563   Durbin-Watson:                   0.892
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):            70209.637
-Skew:                           7.328   Prob(JB):                         0.00
-Kurtosis:                      73.385   Cond. No.                         23.6
+Omnibus:                      506.492   Durbin-Watson:                   1.914
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           109382.227
+Skew:                           8.821   Prob(JB):                         0.00
+Kurtosis:                      93.166   Cond. No.                         22.5
 ==============================================================================
 
 Notes:
 [1] Standard Errors are heteroscedasticity robust (HC1)
 ```
 
-n = 326 asset-days. Coefficient on log(1 + days since release): -1.276 (p = 0.00075); R² = 0.093.
+n = 311 asset-days. Coefficient on log(1 + days since release): -1.170 (p = 0.0039); R² = 0.056.
 
 ## Chi-square: X post #3 profile-visit rate, organic vs paid
 
@@ -170,4 +167,4 @@ Organic 1.61% vs paid 0.29% (5.5x); chi² = 37.3, dof = 1, p = 1e-09. Directiona
 
 ## Welch t-test: weekday vs weekend downloads
 
-Weekday mean 12.9 (n=10) vs weekend 10.2 (n=4); t = 0.32, p = 0.758.
+Weekday mean 7.8 (n=10) vs weekend 31.3 (n=3); t = -0.84, p = 0.487.

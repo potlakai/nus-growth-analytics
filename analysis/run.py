@@ -21,8 +21,11 @@ STAR = ['dim_date', 'dim_release', 'dim_asset', 'dim_page', 'fact_downloads_dail
 
 
 def build(con):
+    # Every column is read as text. Letting DuckDB parse the ISO timestamps turned them into timezone-aware values that
+    # it then printed in the machine's local time, which moved early-morning UTC snapshots to the previous day and made
+    # the daily series disagree with Athena (found by comparing the two engines' answers, 2026-10-08).
     for table in ('download_snapshots', 'site_daily', 'funnel_events'):
-        con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{(RAW / (table + '.csv')).as_posix()}', all_varchar=false)")
+        con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{(RAW / (table + '.csv')).as_posix()}', all_varchar=true)")
     # The CSVs hold ISO strings; keep the timestamp columns as text so the SQL stays portable to Athena.
     con.execute("CREATE OR REPLACE TABLE download_snapshots AS SELECT CAST(taken_at AS VARCHAR) taken_at, repo, tag, asset, product, kind, "
                 "CAST(download_count AS INTEGER) download_count, CAST(published_at AS VARCHAR) published_at FROM download_snapshots")

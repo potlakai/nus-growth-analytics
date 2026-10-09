@@ -1,12 +1,12 @@
 release_key,repo,tag,published_date
-1,potlakai/nus,v1.0.0,2026-07-07
+1,potlakai/nus,v1.0.0,2026-07-08
 2,potlakai/nus,desktop-v0.1.0,2026-08-19
 3,potlakai/nus-desktop,v0.1.0,2026-08-19
 4,potlakai/nus-desktop,v0.2.1,2026-08-22
-5,potlakai/nus-desktop,v0.2.2,2026-08-22
-6,potlakai/nus-desktop,v0.2.3,2026-08-22
-7,potlakai/nus-desktop,v0.2.4,2026-09-06
-8,potlakai/nus-desktop,v0.2.5,2026-09-12
+5,potlakai/nus-desktop,v0.2.2,2026-08-23
+6,potlakai/nus-desktop,v0.2.3,2026-08-23
+7,potlakai/nus-desktop,v0.2.4,2026-09-07
+8,potlakai/nus-desktop,v0.2.5,2026-09-13
 9,potlakai/nus-desktop,v0.2.6,2026-09-16
 10,potlakai/nus-desktop,companion-v0.1.0,2026-09-22
 11,potlakai/nus-desktop,companion-v0.1.1,2026-09-28

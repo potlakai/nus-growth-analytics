@@ -20,7 +20,9 @@ Read this, run every step yourself once, and change one query on purpose to see 
 1. Deltas by file name alone went negative, because the same file name appears in several releases. The fix was to partition by release and file.
 2. A file name mapped to two products. Joining the dimension on name alone duplicated rows. The fix was to key the dimension on repo + tag + asset.
 
-**The interview line:** "I check grain first: what is one row?"
+3. The daily series disagreed between DuckDB and Athena. DuckDB had parsed the timestamps as timezone-aware and printed them in local time, shifting early-UTC snapshots a day back. The fix was to load timestamps as text. Running the same SQL on two engines is what exposed it.
+
+**The interview line:** "I check grain first: what is one row? Then I check the same answer two ways."
 
 ## 3. Queries (`sql/analysis/queries.sql`)
 
@@ -41,9 +43,9 @@ Read this, run every step yourself once, and change one query on purpose to see 
 - Model: daily downloads ~ log(1 + days since release) + product.
 - Why log: decay is fast at first and then flattens.
 - Why robust (HC1) errors: the variance is bigger early in a release's life.
-- How to read the coefficient: -1.28 with p < 0.001 means each unit increase in log-age cuts expected daily downloads by about 1.3 per file.
+- How to read the coefficient: -1.17 with p = 0.004 means each unit increase in log-age cuts expected daily downloads by about 1.2 per file.
 - Business action: ship releases on a cadence, because each one restarts the pull.
-- R² is low (0.09), and that's fine: the question is direction and significance, not prediction.
+- R² is low (0.06), and that's fine: the question is direction and significance, not prediction.
 
 **Chi-square (2x2):**
 - Compares organic vs paid profile visits per impression.
@@ -52,7 +54,7 @@ Read this, run every step yourself once, and change one query on purpose to see 
 
 **Welch t-test:**
 - Weekday vs weekend daily downloads.
-- No difference (p = 0.86).
+- No detectable difference (p = 0.49, only 3 weekend days).
 - Welch, because the groups have unequal size and variance.
 
 ## 5. Data-quality judgment
